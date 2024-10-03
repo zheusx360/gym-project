@@ -1,13 +1,10 @@
 import { prisma } from '@/lib/prisma'
-import { Prisma } from '@prisma/client'
+import { Prisma, User } from '@prisma/client'
 import { IUsersRepository } from '../users-repository-interface'
 
 export class PrismaUsersRepository implements IUsersRepository {
    async findByEmail(email: string) {
       const user = await prisma.user.findUnique({ where: { email } })
-      if (user) {
-         throw new Error("Email já cadastrado!")
-      }
       return user
    }
    async create(data: Prisma.UserCreateInput) {
