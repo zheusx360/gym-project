@@ -4,7 +4,10 @@
   "description": "## Requisitos funcionais (RFs) - [] Deve ser possível se cadastrar; - [] Deve ser possível fazer login; - [] Deve ser possível obter o perfil de um usuário logado; - [] Deve ser possível obter o número de check-ins realizados pelo usuário logado; - [] Deve ser possível o usuário obter o histórico de check-ins; - [] Deve ser possível obter a lista de academia mais proximas; - [] Deve ser possível o usuário obter a academia por nome; - [] Deve ser possível o usuário fazer check-in em uma academia; - [] Deve ser possível validar o check-in de um usuário; - [] Deve ser possível cadastrar uma academia;",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:coverage": "vitest --coverage",
+    "test:ui":"vitest --ui",
     "start": "node build/server.js",
     "dev": "nodemon --exec ts-node -r tsconfig-paths/register src/server.ts",
     "build": "tsup src --out-dir build",
@@ -17,6 +20,8 @@
     "@rocketseat/eslint-config": "2.2.2",
     "@types/node": "22.7.4",
     "@typescript-eslint/parser": "6.21.0",
+    "@vitest/coverage-v8": "2.1.3",
+    "@vitest/ui": "2.1.3",
     "eslint": "8.57.1",
     "eslint-config-prettier": "9.1.0",
     "eslint-plugin-import": "2.30.0",
@@ -29,14 +34,18 @@
     "tsconfig-paths": "4.2.0",
     "tsup": "8.3.0",
     "tsx": "4.19.1",
-    "typescript": "5.6.2"
+    "typescript": "5.6.2",
+    "vite-tsconfig-paths": "5.0.1",
+    "vitest": "2.1.3"
   },
   "dependencies": {
     "@prisma/client": "5.20.0",
     "@types/bcryptjs": "2.4.6",
+    "@types/supertest": "6.0.2",
     "bcryptjs": "2.4.3",
     "dotenv": "16.4.5",
     "fastify": "^5.0.0",
+    "supertest": "7.0.0",
     "zod": "3.23.8"
   }
 }
