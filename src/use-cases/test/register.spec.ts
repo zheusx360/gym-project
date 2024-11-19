@@ -20,7 +20,7 @@ describe('Register use cases', () => {
       expect(user.id).toEqual(expect.any(String))
    })
 
-   it('should hash user pessword upon refistration', async () => {
+   it('should hash user pessword upon registration', async () => {
       const usersRepository = new InmemoryUsersRepository()
 
       const registerUseCase = new RegisterUseCase(usersRepository)

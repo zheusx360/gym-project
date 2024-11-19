@@ -6,6 +6,7 @@
   "scripts": {
     "test": "vitest run",
     "test:watch": "vitest",
+    "test:e2e": "vitest run --dir src/http/e2e",
     "test:coverage": "vitest --coverage",
     "test:ui":"vitest --ui",
     "start": "node build/server.js",

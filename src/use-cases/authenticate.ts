@@ -18,6 +18,7 @@ export class AuthenticateUseCase {
    ) { }
 
    async execute({ email, password }: AuthenticateUseCaseRequest): Promise<AuthenticateUseCaseResponse> {
+      const data = new Date()
       const user = await this.usersRepository.findByEmail(email)
 
       if (!user) {
