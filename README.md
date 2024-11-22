@@ -2,19 +2,19 @@
 
 ## Requisitos funcionais (RFs)
 - [X] Deve ser possível se cadastrar;
-- [] Deve ser possível fazer login;
-- [] Deve ser possível obter o perfil de um usuário logado;
+- [X] Deve ser possível fazer login;
+- [X] Deve ser possível obter o perfil de um usuário logado;
 - [] Deve ser possível obter o número de check-ins realizados pelo usuário logado;
 - [] Deve ser possível o usuário obter o histórico de check-ins;
 - [] Deve ser possível obter a lista de academia mais proximas;
 - [] Deve ser possível o usuário obter a academia por nome;
-- [] Deve ser possível o usuário fazer check-in em uma academia;
+- [X] Deve ser possível o usuário fazer check-in em uma academia;
 - [] Deve ser possível validar o check-in de um usuário;
 - [] Deve ser possível cadastrar uma academia;
 
 ## Regras de negócio (RNs)
 - [X] O usuário não pode ser cadastrar com um email duplicado;
-- [] O usuário não pode fazer dois check-ins no mesmo dia;
+- [X] O usuário não pode fazer dois check-ins no mesmo dia;
 - [] O usuário não pode fazer check-in se não estiver perto da academia;  
 - [] O check-in só pode ser válidado por adminstradores;
 - [] A academia só pode ser cadatrada por administradores;
