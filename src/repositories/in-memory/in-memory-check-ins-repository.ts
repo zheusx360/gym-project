@@ -5,6 +5,31 @@ import { randomUUID } from "crypto";
 import dayjs = require("dayjs");
 
 export class InMemoryCheckinsRepository implements CheckinRepositoryInterface {
+   async save(checkIn: CheckIn) {
+      const checkInIndex = this.items.findIndex(item => item.id === checkIn.id)
+
+      if (checkInIndex >= 0) {
+         this.items[checkInIndex] = checkIn
+      }
+
+      return checkIn
+   }
+
+   async findById(checkinId: string) {
+      const checkin = this.items.find((item) => item.id === checkinId)
+
+      if (!checkin) {
+         null
+      }
+
+      return checkin
+   }
+   async counterByUserId(userId: string) {
+      return this.items.filter((item) => item.user_id === userId).length
+   }
+   async findManyByUserId(userId: string, page: number) {
+      return this.items.filter(items => items.user_id === userId).slice((page - 1) * 20, page * 20)
+   }
 
    async findByUserIdOnDate(userId: string, date: Date) {
 
