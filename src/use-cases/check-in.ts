@@ -46,8 +46,6 @@ export class CheckinUseCase {
 
       const checkInOnSameDay = await this.checkinsRepository.findByUserIdOnDate(userId, new Date())
 
-      console.log(checkInOnSameDay)
-
       if (checkInOnSameDay) {
          throw new MaxNumberOfCheckinsError()
       }

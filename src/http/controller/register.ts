@@ -13,7 +13,7 @@ export async function register(req: FastifyRequest, resp: FastifyReply) {
    const { name, email, password } = registerBodySchema.parse(req.body);
    try {
 
-      //Nesse método está sendo passada a parte do usecase qual é responsavel pela parte que está fazendo a inversção de dependencia
+      //Nesse método está sendo passada a parte do use-case qual é responsavel pela parte que está fazendo a inversão de dependencia
       const registerUseCase = makeRegisterUseCase()
 
       await registerUseCase.execute({ name, email, password });
